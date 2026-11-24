@@ -97,6 +97,42 @@ Proyecto académico atribuido provisionalmente al portafolio de **Emmanuel Trejo
 
 No se ha elegido una licencia de código abierto: todos los derechos permanecen con sus titulares hasta que estos autoricen una licencia. La inclusión en GitHub no implica permiso para copiar o reutilizar el código.
 
+## Capturas del sistema
+
+### Vista general del mapa y paneles
+Interfaz principal del sistema con mapa interactivo, filtros por especialidad, selección de origen y panel de análisis de resultados.
+
+![Vista general del sistema](docs/screenshots/01-overview.png)
+
+### Ejemplo de cálculo de ruta
+Consulta de acceso hacia un centro de salud, mostrando distancia, tiempo estimado, vía elegida y métricas del algoritmo.
+
+![Ejemplo de cálculo de ruta](docs/screenshots/02-route-example.png)
+
+### Resultados y ranking de acceso
+Detalle del centro seleccionado y ranking de centros ordenados por ETA desde el origen.
+
+![Resultados y ranking](docs/screenshots/03-results-ranking.png)
+
+### Análisis de cobertura
+Visualización del criterio de cobertura y análisis espacial de accesibilidad alrededor del punto de origen.
+
+![Análisis de cobertura](docs/screenshots/04-coverage-analysis.png)
+
+### Ejecución local del proyecto
+Ejemplo de ejecución desde la terminal local usando el modo sin OSRM.
+
+![Ejecución local en terminal](docs/screenshots/05-terminal-run.png)
+
+## ¿Qué demuestra este proyecto?
+
+- Implementación de rutas de acceso a centros de salud en la Provincia de Panamá.
+- Uso de algoritmos de caminos mínimos, incluyendo Dijkstra.
+- Visualización geoespacial sobre mapa interactivo.
+- Comparación entre ruta directa y ruta por calles.
+- Análisis de cobertura, ranking de acceso y tiempo estimado de llegada.
+- Automatización con pruebas y GitHub Actions.
+
 ---
 
 ## English summary
