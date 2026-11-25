@@ -1,0 +1,11 @@
+﻿caso,destino,vertices_totales,arcos_dirigidos,dijkstra_ms_mediana_25,bfs_ms_mediana_25,floyd_ms_mediana_25,dijkstra_costo_min,bfs_costo_min,floyd_costo_min,saltos_dijkstra,saltos_bfs,saltos_floyd,floyd_pares_alcanzables,comprobacion
+1,Clínica Albrook,94,714,0.0063,0.0036,43.9846,2.3557,2.3557,2.3557,1,1,1,8284,coincidencia_Floyd_Dijkstra_y_historico
+2,Complejo Hosp. Arnulfo Arias Madrid (CSS),94,714,0.0044,0.0028,45.1765,1.2787,1.2787,1.2787,1,1,1,8284,coincidencia_Floyd_Dijkstra_y_historico
+3,Clínica Bella Vista,94,714,0.0045,0.0036,44.4001,1.4717,1.4717,1.4717,1,1,1,8284,coincidencia_Floyd_Dijkstra_y_historico
+4,Clínica Bella Vista,94,714,0.013,0.0058,44.7211,2.1895,2.1895,2.1895,1,1,1,8284,coincidencia_Floyd_Dijkstra_y_historico
+5,Clínica Bella Vista,94,714,0.0146,0.0065,43.6349,1.9521,1.9521,1.9521,1,1,1,8284,coincidencia_Floyd_Dijkstra_y_historico
+6,Centro de Salud de El Chorrillo (MINSA),94,714,0.0821,0.0246,43.7294,14.5587,14.5607,14.5587,4,3,4,8284,coincidencia_Floyd_Dijkstra_y_historico
+7,Centro de Salud de Betania (MINSA),94,714,0.0559,0.0228,43.367,15.3804,15.3804,15.3804,3,3,3,8284,coincidencia_Floyd_Dijkstra_y_historico
+8,Hosp. San Miguel Arcángel - HISMA,94,714,0.0527,0.0191,43.848,17.6321,18.8515,17.6321,3,3,3,8284,coincidencia_Floyd_Dijkstra_y_historico
+9,Policentro de San Isidro,94,714,0.0888,0.024,43.0917,18.6601,19.4398,18.6601,4,3,4,8284,coincidencia_Floyd_Dijkstra_y_historico
+10,Centro de Salud de Pedregal (MINSA),94,714,0.0082,0.005,42.4209,10.0996,10.0996,10.0996,1,1,1,8284,coincidencia_Floyd_Dijkstra_y_historico

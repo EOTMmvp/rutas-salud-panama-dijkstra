@@ -1,142 +1,98 @@
-# Rutas de Acceso a Salud — Panamá
+# Rutas de acceso a salud · Panamá
 
-**Laboratorio académico de algoritmos de rutas y análisis geoespacial** · Python · Dijkstra · grafos · OpenStreetMap
+**Prototipo de investigación en Python** para estudiar algoritmos de camino mínimo y estructuras de datos aplicados a un conjunto de instalaciones de salud de la provincia de Panamá. El proyecto fue desarrollado como trabajo académico de equipo en la Universidad Tecnológica de Panamá (UTP).
 
-> **Aviso:** proyecto educativo/experimental. **No utilizar para emergencias médicas, derivaciones de pacientes ni decisiones clínicas.** Las ubicaciones y horarios pueden ser aproximados o estar desactualizados; el tráfico es sintético y las rutas externas dependen de terceros.
+> **Importante:** Herramienta de investigación y docencia. El modelo de tráfico es **sintético**; la aplicación **no** proporciona información clínica ni se debe utilizar para determinar rutas de emergencia. Las instalaciones y horarios requieren verificación independiente.
 
-![Distribución aproximada de las instalaciones del dataset](docs/assets/distribucion_instalaciones.png)
+![Captura del mapa en ejecución](site/assets/captura-aplicacion.webp)
 
-## ¿Qué problema explora?
+## ¿Qué contiene?
 
-Comparar estrategias para encontrar rutas hacia instalaciones de salud de la provincia de Panamá, distinguiendo distancias teóricas, estimaciones de tránsito y rutas sobre calles obtenidas a través de servicios externos.
+- **Dijkstra** con cola de prioridad (montículo mínimo) implementada en Python.
+- **BFS** con cola FIFO propia como comparación de menor cantidad de saltos.
+- **Floyd–Warshall** para caminos mínimos entre todos los pares del grafo hospitalario abstracto.
+- Grafo de instalaciones con proximidad geográfica + árbol de expansión mínima.
+- Laboratorio opcional de segmentos dirigidos de **OpenStreetMap** (Overpass) para recorridos locales.
+- Consultas de ruta por distancia/tiempo, bloqueos simulados, escalabilidad y comparación técnica con OSRM.
+- Visualización cartográfica local, exportaciones y **40 pruebas internas**.
 
-Este repositorio fue **preparado a partir del código académico existente**, conservando el motor original y añadiendo documentación, pruebas de humo, archivos para Git y CI. No representa una plataforma de atención médica desplegada.
+## Resultados documentados
 
-### Evidencia verificada
+| Prueba | Resultado | Alcance |
+|---|---|---|
+| Calles OpenStreetMap | 10 casos; media computacional de 37,29 ms | Subgrafos viales descargados en los experimentos |
+| Distancia frente a tiempo | Selección de caminos distintos en 6/10 casos | Ponderaciones y tráfico simulado |
+| Segmento bloqueado | Ruta alternativa en 10/10 casos | Solo los diez casos probados |
+| Dijkstra vs. Floyd–Warshall | Igual costo mínimo en los 10 casos | Grafo hospitalario abstracto |
+| Pruebas internas | 40/40 | Suite integrada en el script |
 
-| Indicador | Resultado reproducido localmente |
-| --- | ---: |
-| Instalaciones del dataset incluido | **93** |
-| Pruebas internas | **38 / 38 correctas** |
-| Errores de validación del dataset | **0** |
-| Avisos de validación | **7** |
-| Observaciones informativas | **2** |
+Los números describen **experimentos concretos**, no garantías generales de rendimiento ni precisión vehicular.
 
-**Interpretación:** el archivo original se entregó con nombre «v4.1», pero su constante interna todavía indica `4.0-laboratorio`; no cambié esa identificación para conservar el código. Las pruebas son **internas**, algunas usan simulaciones de servicios. No verifican la exactitud de todas las instalaciones ni constituyen auditoría clínica o certificación de rutas reales.
+## Requisitos
 
-## Funcionalidades identificadas en el código
+- **Python 3.10 o superior**; núcleo basado en biblioteca estándar.
+- Navegador moderno (Edge/Chrome/Firefox).
+- Internet para OpenStreetMap, Overpass y OSRM; algunos experimentos no lo requieren.
+- Opcional: `pip install -r requirements-optional.txt` para informes PDF enriquecidos.
 
-- Visualización de instalaciones y consultas de trayectos en un mapa interactivo local.
-- **Dijkstra** sobre un grafo entre centros de salud; construcción mediante vecinos próximos y árbol de expansión mínima para conectar la red.
-- Comparación entre distancia directa, estimación de rutas por calles y rutas devueltas por **OSRM** cuando esté disponible.
-- Laboratorio opcional con **Dijkstra, Bellman-Ford, A*, BFS**, colas FIFO y montículos propios.
-- Experimentos de congestión **sintética**, cierres de segmentos, benchmarks y consultas de segmentos **OSM/Overpass** bajo condiciones limitadas.
-- Consultas desde la terminal, validación y exportación JSON/CSV; generación de PDF opcional.
-- Servidor HTTP local con protección básica de las operaciones de escritura mediante token.
+## Ejecutar en Windows
 
-## Ejecutarlo en Windows / Linux / macOS
+1. Descarga el repositorio en ZIP desde **Code → Download ZIP** en GitHub y extráelo.
+2. Instala Python si no lo tienes.
+3. Haz doble clic en **`INICIAR_RUTAS.bat`**.
+4. El mapa se abrirá en tu navegador local, con una dirección similar a `http://127.0.0.1:60655`.
+5. Abre **Laboratorio de Dijkstra** y pulsa **Comparar Dijkstra, BFS y Floyd-Warshall**.
 
-Requiere **Python 3.11 o superior**. El flujo básico utiliza la biblioteca estándar, por lo que no necesita instalar dependencias de pip.
-
-```bash
-cd rutas-salud-panama-dijkstra
-python rutas_salud_panama.py --sin-osrm
-```
-
-**Nota:** descomprime el ZIP y entra a su carpeta antes de ejecutar los comandos. Cuando se publique el repositorio, agregaremos aquí el enlace real para clonarlo. El comando `python` puede ser `py` en Windows o `python3` en Linux/macOS.
-
-El programa mostrará una URL local (por ejemplo `http://127.0.0.1:PUERTO/`). Se recomienda conservar el valor predeterminado `--host 127.0.0.1`. El mapa web necesita Internet para descargar Leaflet y el fondo de OpenStreetMap; `--sin-osrm` evita consultar OSRM, pero no descarga localmente esos recursos del navegador.
-
-Para iniciar el modo de calles externo (requiere conexión e implica consultar servicios externos):
+En Linux/macOS: `sh INICIAR_RUTAS.sh` o `python3 src/rutas_salud_panama_floyd.py`.
 
 ```bash
-python rutas_salud_panama.py
+python src/rutas_salud_panama_floyd.py --autotest
+python src/rutas_salud_panama_floyd.py --validar
+python scripts/reproducir_comparacion_tres_algoritmos.py
 ```
 
-### Reproducir los resultados sin Internet
+El último comando guarda resultados nuevos en `results/reproduccion/`, sin sobrescribir los archivos experimentales publicados aquí. Los tiempos variarán entre equipos.
 
-```bash
-python rutas_salud_panama.py --autotest
-python rutas_salud_panama.py --validar
-python rutas_salud_panama.py --sin-osrm --consulta "8.98,-79.52" --top 3
-python -m unittest discover -s tests -v
+## Artículo científico
+
+**Shortest-Path Evaluation for Healthcare Access in Panama: Dijkstra, BFS, and Floyd–Warshall Across Two Graph Models**
+
+- [Leer artículo completo (PDF)](paper/Articulo_Dijkstra_V4_Tres_Algoritmos_EN_APA.pdf)
+- [Descargar manuscrito editable (Word)](paper/Articulo_Dijkstra_V4_Tres_Algoritmos_EN_APA.docx)
+- [Comparación de tres algoritmos (CSV)](results/Comparacion_Dijkstra_BFS_Floyd_10_Casos.csv)
+- [Casos viales documentados (CSV)](results/Casos_Verificados_Dijkstra_v41.csv)
+- [Exportaciones primarias (ZIP)](data/raw/Experimentos_Djistraka.zip)
+- [Cómo reproducir la investigación](docs/REPRODUCIBILIDAD.md)
+
+**Autores que figuran en el manuscrito:** Emmanuel Trejos, Rolando Montero, Jorge Isaac Abadia y Oswel Cardona. **Estado:** borrador de manuscrito académico; no se afirma aceptación o publicación por una revista.
+
+## Demostración web para Vercel
+
+El directorio [`site/`](site/) contiene una **presentación pública estática** con una comparación interactiva real de los tres algoritmos sobre un grafo *sintético pequeño*. **No es** la aplicación completa ni el laboratorio OSM; esos requieren iniciar el Python en local.
+
+Para publicar por primera vez, sigue [Publicar en GitHub](docs/PUBLICAR_EN_GITHUB.md) y después [Despliegue en Vercel](docs/DESPLIEGUE_VERCEL.md).
+
+## Estructura del proyecto
+
+```text
+├── src/                 Código Python original
+├── scripts/             Reproducción científica
+├── paper/               Manuscrito en PDF y DOCX
+├── results/             CSV y JSON de resultados
+├── data/raw/            Evidencias exportadas originales
+├── docs/                Metodología, reproducibilidad, despliegue
+├── site/                Página demostrativa para Vercel
+├── .github/workflows/   Pruebas automáticas
+└── INICIAR_RUTAS.bat     Lanzador para Windows
 ```
 
-La consulta de muestra usa una coordenada pública aproximada para ilustrar el algoritmo. **No es una recomendación de atención médica.**
+## Créditos, datos y uso responsable
 
-### PDF opcional
+- Cartografía y datos viales: **© OpenStreetMap contributors** (licencia ODbL, con atribución conforme a sus requisitos).
+- Motor de referencia: **OSRM**; sus estimaciones no son tráfico real observado.
+- El código del equipo y el artículo **no cuentan todavía con licencia abierta acordada por los autores**; por lo tanto, publicar el repositorio no equivale a conceder permisos de reutilización. Antes de elegir una licencia deben consultarlo con todos los integrantes.
+- Para incidencias o solicitudes académicas, utilizar las herramientas de contacto del repositorio una vez publicado.
 
-```bash
-python -m pip install -r requirements-pdf.txt
-python rutas_salud_panama.py --validar --pdf informe_validacion.pdf
-```
+## Estado del proyecto
 
-Si decides crear correcciones locales o generar el `index.html`, `.gitignore` evitará que se incluyan en el primer commit. No subir resultados de verificación de ubicaciones sin revisarlos.
-
-## Tecnologías
-
-- Python 3: grafos, búsqueda, estadísticas, validación y servidor HTTP local.
-- HTML, CSS, JavaScript y Leaflet: mapa y controles (generados desde el script Python).
-- OSRM, OpenStreetMap, Nominatim, Overpass: **servicios externos opcionales**, sujetos a conectividad, disponibilidad y políticas de uso.
-- ReportLab: instalación opcional para informes PDF.
-- `unittest` y GitHub Actions: pruebas externas y ejecución automatizada de CI.
-
-## Documentación
-
-- [Caso de estudio y competencias demostradas](docs/CASO_DE_ESTUDIO.md)
-- [Arquitectura y métodos](docs/ARQUITECTURA.md)
-- [Metodología, datos y limitaciones](docs/METODOLOGIA_Y_LIMITACIONES.md)
-- [Cómo se verificó](docs/PRUEBAS.md)
-- [Seguridad, privacidad y uso responsable](docs/SEGURIDAD.md)
-- [Créditos, origen y permisos pendientes](CREDITOS.md)
-- [Guía para publicar en GitHub](docs/PUBLICAR_EN_GITHUB.md)
-
-## Autoría y condición de publicación
-
-Proyecto académico atribuido provisionalmente al portafolio de **Emmanuel Trejos**. **Antes de hacerlo público**, confirmar personas colaboradoras, autorización para compartir código y datos, y restricciones relacionadas con la publicación científica. Consulta [CREDITOS.md](CREDITOS.md).
-
-No se ha elegido una licencia de código abierto: todos los derechos permanecen con sus titulares hasta que estos autoricen una licencia. La inclusión en GitHub no implica permiso para copiar o reutilizar el código.
-
-## Capturas del sistema
-
-### Vista general del mapa y paneles
-Interfaz principal del sistema con mapa interactivo, filtros por especialidad, selección de origen y panel de análisis de resultados.
-
-![Vista general del sistema](docs/screenshots/01-overview.png)
-
-### Ejemplo de cálculo de ruta
-Consulta de acceso hacia un centro de salud, mostrando distancia, tiempo estimado, vía elegida y métricas del algoritmo.
-
-![Ejemplo de cálculo de ruta](docs/screenshots/02-route-example.png)
-
-### Resultados y ranking de acceso
-Detalle del centro seleccionado y ranking de centros ordenados por ETA desde el origen.
-
-![Resultados y ranking](docs/screenshots/03-results-ranking.png)
-
-### Análisis de cobertura
-Visualización del criterio de cobertura y análisis espacial de accesibilidad alrededor del punto de origen.
-
-![Análisis de cobertura](docs/screenshots/04-coverage-analysis.png)
-
-### Ejecución local del proyecto
-Ejemplo de ejecución desde la terminal local usando el modo sin OSRM.
-
-![Ejecución local en terminal](docs/screenshots/05-terminal-run.png)
-
-## ¿Qué demuestra este proyecto?
-
-- Implementación de rutas de acceso a centros de salud en la Provincia de Panamá.
-- Uso de algoritmos de caminos mínimos, incluyendo Dijkstra.
-- Visualización geoespacial sobre mapa interactivo.
-- Comparación entre ruta directa y ruta por calles.
-- Análisis de cobertura, ranking de acceso y tiempo estimado de llegada.
-- Automatización con pruebas y GitHub Actions.
-
----
-
-## English summary
-
-**Academic routing and graph-algorithms laboratory for healthcare facilities in Panama.** The included dataset contains 93 facility records. In a local offline verification, the software passed **38/38 built-in checks** and reported **0 validation errors, 7 warnings, and 2 informational observations**. Features include Dijkstra-based graph routing, comparisons with Bellman-Ford, A* and BFS, synthetic congestion experiments, a local interactive map, and optional OSM/OSRM queries. External route and geolocation accuracy have **not** been independently validated.
-
-**Safety:** educational prototype only; **not** suitable for medical emergencies, dispatch, clinical decisions, or real-time navigation. Python 3.11+; the CLI self-tests use only the standard library. Contributor permissions and publication status must be confirmed before public release.
+Prototipo académico documentado y probado localmente. Próximos pasos: revisión final del artículo, publicación del repositorio, despliegue de la demostración y verificación de enlaces.

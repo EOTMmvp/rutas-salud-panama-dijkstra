@@ -1,0 +1,2 @@
+# Exportación opcional de informes PDF con ReportLab
+reportlab>=4,<5

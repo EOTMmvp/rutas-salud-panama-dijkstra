@@ -1,0 +1,3 @@
+# El programa y las 40 pruebas utilizan exclusivamente la biblioteca estándar de Python.
+# Python >= 3.10.
+# Para habilitar exportación PDF enriquecida, véase requirements-optional.txt.
