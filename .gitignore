@@ -1,37 +1,20 @@
-# Python
+# Archivos generados al ejecutar la aplicación
 __pycache__/
 *.py[cod]
-.pytest_cache/
-.mypy_cache/
-.ruff_cache/
-.coverage
-htmlcov/
 .venv/
 venv/
-env/
-
-# Archivos locales generados por la aplicación
-/index.html
-/correcciones_coordenadas.json
-/correcciones_sugeridas.json
-/verificacion_coordenadas.csv
-/reports/
-/reportes/
-/exports/
-/salidas/
-
-# Archivos de editores y sistema
-.idea/
-.vs/
-.vscode/
-.DS_Store
-Thumbs.db
-*.swp
-*.tmp
-*.bak
-*.log
-
-# Secretos; publicar solo plantillas sin valores
 .env
 .env.*
 !.env.example
+.DS_Store
+Thumbs.db
+.pytest_cache/
+.coverage
+*.log
+/src/index.html
+/src/correcciones_coordenadas.json
+/src/correcciones_sugeridas.json
+/src/verificacion_coordenadas.csv
+/results/reproduccion/
+*.tmp
+/index.html

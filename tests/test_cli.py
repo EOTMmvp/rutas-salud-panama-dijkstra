@@ -8,7 +8,7 @@ import tempfile
 import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
-APP = ROOT / "rutas_salud_panama.py"
+APP = ROOT / "src" / "rutas_salud_panama_floyd.py"
 
 
 def run_app(*args):
@@ -38,7 +38,7 @@ class HospitalRoutingCLI(unittest.TestCase):
     def test_internal_self_tests(self):
         result = run_app("--autotest")
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
-        self.assertIn("38/38 pruebas correctas", result.stdout)
+        self.assertIn("40/40 pruebas correctas", result.stdout)
 
     def test_dataset_validation(self):
         result = run_app("--validar")

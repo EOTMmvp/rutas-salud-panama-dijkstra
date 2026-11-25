@@ -1,0 +1,157 @@
+[
+  {
+    "path": ".gitignore",
+    "bytes": 308,
+    "sha256": "1839d35d5006f5b22d14b100b54fbdfcae83307e4958555f55291f5bac509584"
+  },
+  {
+    "path": "INICIAR_RUTAS.sh",
+    "bytes": 92,
+    "sha256": "eec19c548786fe76ede5d1a3e444ce7f3928ea279699de8f1899843310ea41d1"
+  },
+  {
+    "path": "requirements-optional.txt",
+    "bytes": 70,
+    "sha256": "e1754ae1b8103e72a12c0f99b967083fd70c970dbced2a2656763c4d1ec9efb1"
+  },
+  {
+    "path": "README.md",
+    "bytes": 5896,
+    "sha256": "7130bac16687326b359c36499413adaab94315a7120b0abd1a55a81afdf39085"
+  },
+  {
+    "path": "requirements.txt",
+    "bytes": 189,
+    "sha256": "40cefba402495820f4f120c99786cc40fab27aea6c9ed727a99950ae8a162be5"
+  },
+  {
+    "path": "vercel.json",
+    "bytes": 69,
+    "sha256": "fc5f015e7ccb65026c1d2ed521e16157933492a54d04b4cdd226f660cbc60966"
+  },
+  {
+    "path": "INICIAR_RUTAS.bat",
+    "bytes": 251,
+    "sha256": "aa0896335945d96049c595955140737feadfbcb50d531c77bf7fe45feb086367"
+  },
+  {
+    "path": "src/rutas_salud_panama_floyd.py",
+    "bytes": 312360,
+    "sha256": "56a968d4f35d9f1318e50286925303ac601d9141436d681ed299c24c50ed8c78"
+  },
+  {
+    "path": "scripts/reproducir_comparacion_tres_algoritmos.py",
+    "bytes": 4643,
+    "sha256": "8f8ef1ab62a17d6b29b16131313bf43f31813aa00fe985e692c755f885bcd635"
+  },
+  {
+    "path": "paper/Articulo_Dijkstra_V4_Tres_Algoritmos_EN_APA.docx",
+    "bytes": 284176,
+    "sha256": "cb6976c8a63ead6d8e273475d006ab5cec25640dc5df2cf22729d6f40010c74d"
+  },
+  {
+    "path": "paper/Articulo_Dijkstra_V4_Tres_Algoritmos_EN_APA.pdf",
+    "bytes": 413272,
+    "sha256": "f027d723568886d8349e24d148d87576caa25fdb2d18024d3a200752284e5cb4"
+  },
+  {
+    "path": "docs/REPRODUCIBILIDAD.md",
+    "bytes": 2263,
+    "sha256": "5c4f4060345cf5789ffae95b7d7c6a6e0c746c404455916fad4840fae3542c33"
+  },
+  {
+    "path": "docs/METODOLOGIA.md",
+    "bytes": 945,
+    "sha256": "53e16d53508d645a17ddf6d8924acefa68e8cec8c5b7ba2a8052eb898836e1ee"
+  },
+  {
+    "path": "docs/LICENCIA_PENDIENTE.md",
+    "bytes": 515,
+    "sha256": "4dcb340514005a2cb53fc491a4de64a1b26b39d8ddd4e95864e37ab8e0735378"
+  },
+  {
+    "path": "docs/PUBLICAR_EN_GITHUB.md",
+    "bytes": 1732,
+    "sha256": "f6e2a11fef458309fa6c96cd6c8721c27362d9e4661f9a674168ff7501c8ded7"
+  },
+  {
+    "path": "docs/DESPLIEGUE_VERCEL.md",
+    "bytes": 1248,
+    "sha256": "279ff0f3f87d576fd9dfe9ae07a2f92f4ebd84aacb788af36c8a5fa0c5a6185e"
+  },
+  {
+    "path": "site/demo.js",
+    "bytes": 5353,
+    "sha256": "8497c253f5a09dba60d8c66c4faf89b033ac284c7237be85f6f3301fedb75ecd"
+  },
+  {
+    "path": "site/index.html",
+    "bytes": 9219,
+    "sha256": "6a57aa55a863da97e686800fba430aa9cbea1764617b9a9365f03a336716a92c"
+  },
+  {
+    "path": "site/styles.css",
+    "bytes": 9413,
+    "sha256": "1c9adbc6144df53c8312015a4bc9b19d65519918e525ea186a75c77069e63e89"
+  },
+  {
+    "path": "results/Casos_Verificados_Dijkstra_v41.csv",
+    "bytes": 1107,
+    "sha256": "d1d44b204362febfd7dba9547516f093e0f1dd047757a7c408950520d4c373f0"
+  },
+  {
+    "path": "results/Comparacion_Dijkstra_BFS_Floyd_10_Casos.json",
+    "bytes": 6564,
+    "sha256": "99535bc56d1b1f12ed8fc40fe77c0c17836013a2235565e81301ecf24f819962"
+  },
+  {
+    "path": "results/Comparacion_Dijkstra_BFS_Floyd_10_Casos.csv",
+    "bytes": 1581,
+    "sha256": "c05e86e4b211c8f1cb09d8da7939aae5f4c96818ed1acce5bd8630dc49501992"
+  },
+  {
+    "path": "site/paper/Articulo_Dijkstra_V4_Tres_Algoritmos_EN_APA.pdf",
+    "bytes": 413272,
+    "sha256": "f027d723568886d8349e24d148d87576caa25fdb2d18024d3a200752284e5cb4"
+  },
+  {
+    "path": "site/results/Casos_Verificados_Dijkstra_v41.csv",
+    "bytes": 1107,
+    "sha256": "d1d44b204362febfd7dba9547516f093e0f1dd047757a7c408950520d4c373f0"
+  },
+  {
+    "path": "site/results/Comparacion_Dijkstra_BFS_Floyd_10_Casos.csv",
+    "bytes": 1581,
+    "sha256": "c05e86e4b211c8f1cb09d8da7939aae5f4c96818ed1acce5bd8630dc49501992"
+  },
+  {
+    "path": "site/assets/fig_bloqueos.webp",
+    "bytes": 27060,
+    "sha256": "fd6cb32e92eaae9f3f9a68dbfd743eff404ca8a1887c3b138f83c51bde6ecf71"
+  },
+  {
+    "path": "site/assets/fig_escalabilidad.webp",
+    "bytes": 21062,
+    "sha256": "630e8e86d3ffafb0925eff6857bcb6be336f8aa3b62fa90f42de72c145f915c7"
+  },
+  {
+    "path": "site/assets/captura-aplicacion.webp",
+    "bytes": 141824,
+    "sha256": "a42464890ffbe37b8021010e1c5e7fcf0f269bbb6fa694e219f8cb6f15e298f3"
+  },
+  {
+    "path": "data/raw/Experimentos_Djistraka.zip",
+    "bytes": 137174,
+    "sha256": "d61658da8ce1aba7e8bfca352a8ea4b241ac68009bc40afe1b7b84bc41e3a755"
+  },
+  {
+    "path": ".github/workflows/python-tests.yml",
+    "bytes": 588,
+    "sha256": "168890ab9a3b8aad89447d3acf60d1afcda1c5dfd0be3df9acb5696ba340f7c5"
+  },
+  {
+    "path": "src/__pycache__/rutas_salud_panama_floyd.cpython-313.pyc",
+    "bytes": 375539,
+    "sha256": "cd81074ea563186e8e45eafe43dd6edad23f73a52ed06f442764a4e5879aa224"
+  }
+]
